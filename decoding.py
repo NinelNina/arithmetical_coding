@@ -9,7 +9,7 @@ def decoding(probabilities, q, x, n, F_k, G_k):
     s = ""
 
     for i in range(n):
-        str_res += f"Шаг {i + 1}\nF_k = {F_k[i]} | G_k = {G_k[i]} | Проверка F_k + q_i * G_k < x:\n"
+        str_res += f"Шаг {i + 1}\nF_k = {F_k[i]:.8f} | G_k = {G_k[i]:.8f} | Проверка F_k + q_i * G_k < x:\n"
         result_s = ""
         for j in range(len(probabilities)):
             q_i = q[j]

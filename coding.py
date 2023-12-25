@@ -60,9 +60,9 @@ def get_code_word(F_S_ik, G_S_ik):
     tmp = get_code_len(G_S_ik)
     str = tmp[0]
     L = tmp[1]
-    str += f"\nx = bin({F_S_ik} + {G_S_ik}/2) = "
+    str += f"\nx = bin({F_S_ik:.8f} + {G_S_ik:.8f}/2) = "
     x = F_S_ik + G_S_ik / 2
-    str += f"bin({x}) = "
+    str += f"bin({x:.8f}) = "
     x = conv_to_bin.float_to_bin_fixed(x)[:L + 2]
     str += f"{x}_2\n"
     x = x[2:L + 2]
@@ -72,7 +72,7 @@ def get_code_word(F_S_ik, G_S_ik):
 
 def get_code_len(G_S_ik):
     L = round(-math.log2(G_S_ik), 6)
-    str = f"\nL = ⌈-log_2({G_S_ik})⌉ + 1 = ⌈{L}⌉ + 1 = "
+    str = f"\nL = ⌈-log_2({G_S_ik:.8f})⌉ + 1 = ⌈{L}⌉ + 1 = "
     L = math.ceil(L) + 1
     str += f"{L}\n"
     return str, L
